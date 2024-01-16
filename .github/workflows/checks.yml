@@ -1,0 +1,17 @@
+---
+name: Checks
+
+on: [push] # run on push
+
+jobs:
+  test-lint:
+    name: Test and Lint
+    runs-on: ubuntu-20.04 #runners
+    stepes:
+      - name: Login to Docker hub
+        uses;
+
+    
+
+
+
