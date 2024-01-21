@@ -40,4 +40,30 @@ on: [push]
 - the trigger
 
 
+- github actions
+  - actions are basically just a docker container and a docker configuration that's set up to perform a certain task
+  - examples
+```
+- name: Login to Docker Hub
+  uses: docker/login-action@v1
+  with:
+    username: ${{ secrets.DOcKERHUB_USER }}
+    password: ${{ secrets.DOCKERHUB_TOKEN }}
+```
+  - create actions or reuse actions created for particular jobs
+  - action is basically just a docker container and a docker configuration that's setup to perform a certain task
+  - eg.docker/login-action@v1
+  - officially provided in the docker repository
+  - next step checkout
+  - executed in order
+  - what the checkout does
+    - provided by github automatically
+    - checks code out inside action jobs
+    - by default code is not checked out inside the job that we're running
+    - sometimes don;t need to checkout code
+  - with is for variables
+
+- dockerhub token
+- one token per service do not share it with multiple services
+- 
 
