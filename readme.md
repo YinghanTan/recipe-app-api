@@ -351,3 +351,44 @@ DATABASES = {
 - depends on how fast is postgres
 - 
   
+## database migrations
+django orm
+- object relational mapper
+- abstraction layer for data
+  - handles database structure and changes
+  - focus on python code
+  - use any database within reason supportted database
+
+## using the orm
+- define models
+- generate migration files
+- setup database
+- store data
+
+### models
+- each mdoel maps to a table
+- models contain
+  - name
+  - fields
+  - other metadata
+  - custom python logic - execute some code everytime you save to the database
+
+```eg
+class Ingredient(models.Model):
+  """Ingredient for recipes."""
+  name = models.CharField(max_length=255)
+  user = models.ForeignKey(
+    settings.AUTH_USER_MODEL,
+    on_delete=models.CASCADE,
+  )
+```
+## create migrations
+- ensure app is enabled in settings.py
+- use dajngo cli
+  - python manage.py makemigrations
+- python mange.py migrate 
+
+## applying migrations
+- use django clie
+  - python manage.py migrate
+- run it after wiaiint for database
