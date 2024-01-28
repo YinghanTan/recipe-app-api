@@ -323,3 +323,31 @@ DATABASES = {
       - these packages are only needed for installing the packages and not needed for running the packages when running the actual app
       - customise dockerfile to cleanup
     - 
+### problems with docker compose
+- race conditon for db
+- depends_on ensures service starts does not ensure it is working or fully started
+  - doesn't ensure application running on service has started as well
+  - service has started but application may not be running yet
+  - service computer, application on laptop may not be running yet
+  - postgres application
+- docker services timeline
+- database
+- django app
+- make django wait for db
+- custom django management command
+  - check for database availability
+  - continue when database is ready
+- new timeline
+- service starting 
+  django service starting 
+  postgresttarting 
+  app starting 
+  wait_for5_db
+- check if postgres is ready
+- database is ready
+- continue with django app execution
+- running docker compose locally
+- running on deployed environment
+- depends on how fast is postgres
+- 
+  
